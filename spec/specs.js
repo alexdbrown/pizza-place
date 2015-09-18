@@ -1,25 +1,32 @@
 describe('Pizza', function() {
   it("allows a user to order one pizza with quantity, toppings and size options", function() {
-    var testPizza = new Pizza(1, "Cheese", "Large", 15);
+    var testPizza = new Pizza(1, "Cheese", "Large");
     expect(testPizza.pizzaQuantity).to.equal(1);
     expect(testPizza.pizzaTopping).to.equal("Cheese");
     expect(testPizza.pizzaSize).to.equal("Large");
-    expect(testPizza.pizzaCost).to.equal(15);
+    // expect(testPizza.totalCost).to.equal(15);
 
   });
 
-  it("allows a user to order more than one pizza with given specifications", function() {
-    var testPizza = new Pizza(2, "Cheese, Sausage", "Medium, Small", 30);
-    expect(testPizza.pizzaQuantity).to.equal(2);
+  it("allows a user to order one pizza with more than one topping", function() {
+    var testPizza = new Pizza(1, "Cheese, Sausage", "Medium");
+    expect(testPizza.pizzaQuantity).to.equal(1);
     expect(testPizza.pizzaTopping).to.equal("Cheese, Sausage");
-    expect(testPizza.pizzaSize).to.equal("Medium, Small");
-    expect(testPizza.pizzaCost).to.equal(30);
+    expect(testPizza.pizzaSize).to.equal("Medium");
+    // expect(testPizza.pizzaCost).to.equal(30);
   });
+
+  it("allows a user to order multiple pizzas with more than one topping", function() {
+    var testPizza = new Pizza(2, "Cheese, Onion, Bacon", "Small, Large");
+    expect(testPizza.pizzaQuantity).to.equal(2);
+    expect(testPizza.pizzaTopping).to.equal("Cheese, Onion, Bacon");
+    expect(testPizza.pizzaSize).to.equal("Small, Large");
+  })
 });
 
-describe("calculateCost", function() {
-  if("costs $15 for one large pizza", function () {
-    var testPizza = new Pizza(1, "Cheese", "Large", 15);
-    expect(testPizza.calculateCost()).to.equal(15);
+describe("Pizza.calculateCost", function() {
+  it("costs $15 for one large pizza", function () {
+    var testPizza = new Pizza(1, "Cheese", "Large");
+    expect(testPizza.calculateCost(testPizza)).to.equal(15);
   });
 });
