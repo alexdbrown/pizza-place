@@ -17,4 +17,9 @@ describe('Pizza', function() {
   });
 });
 
-describe('')
+describe("calculateCost", function() {
+  if("costs $15 for one large pizza", function () {
+    var testPizza = new Pizza(1, "Cheese", "Large", 15);
+    expect(testPizza.calculateCost()).to.equal(15);
+  });
+});
