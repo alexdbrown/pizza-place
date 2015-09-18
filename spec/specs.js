@@ -21,12 +21,17 @@ describe('Pizza', function() {
     expect(testPizza.pizzaQuantity).to.equal(2);
     expect(testPizza.pizzaTopping).to.equal("Cheese, Onion, Bacon");
     expect(testPizza.pizzaSize).to.equal("Small, Large");
-  })
+  });
 });
 
-describe("Pizza.calculateCost", function() {
+describe("Pizza.calculateBaseCost", function() {
   it("costs $15 for one large pizza", function () {
     var testPizza = new Pizza(1, "Cheese", "Large");
-    expect(testPizza.calculateCost(testPizza)).to.equal(15);
+    expect(testPizza.calculateBaseCost()).to.equal(15);
+  });
+
+  it("costs $25 for one small pizza and one large pizza", function () {
+    var testPizza = new Pizza(2, "Cheese", "Small, Large");
+    expect(testPizza.calculateBaseCost()).to.equal(25);
   });
 });
