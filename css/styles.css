@@ -1,0 +1,115 @@
+body {
+  /*background: #F4A4B9; */
+  /*background: #DE6C83;*/
+  background: #F4A4A4;
+  font-family: "Montserrat";
+  padding-top: 70px;
+}
+
+.pig-picker {
+  border-radius: 30%;
+}
+
+.marquee {
+  text-align: center;
+  font-family: "Bangers";
+  border-radius: 1px;
+  border-style: dotted;
+  border-color: #D7BEA8;
+}
+
+.marquee-left {
+  float: left;
+}
+
+.marquee-right {
+  float: right;
+}
+
+.game {
+  display: none;
+}
+
+.well {
+  /*background-color: #FFF7F8;*/
+  background-image: url(../img/bacon-texture.png);
+  opacity: 0.8;
+}
+
+
+.dropshadow {
+  height: auto;
+  -webkit-box-shadow: 20px 20px 42px -4px rgba(116,66,83,1);
+  -moz-box-shadow: 20px 20px 42px -4px rgba(116,66,83,1);
+  box-shadow: 20px 20px 42px -4px rgba(116,66,83,1);
+}
+
+.dice-img {
+  width: 100px;
+  height: 100px;
+}
+
+.pig-img {
+  animation-iteration-count: 2;
+  width: 150px;
+  height: 150px;
+}
+
+
+
+#current-score {
+  text-shadow: 2px 2px 2px #ffffff;
+}
+
+#roll-btn, #pass-btn  {
+  background-color: #F3D9DC;
+}
+
+
+.btn:focus, .btn:active:focus, .btn.active:focus {
+  outline: 0 none;
+}
+
+.bacon-text {
+  text-shadow: 2px 2px 2px #ffffff;
+}
+
+.highlighted {
+  background-color: pink;
+}
+
+.not-playing {
+  background-color: #E3E3E3;
+  opacity: 0.6;
+}
+
+#dice {
+  padding-bottom: 25px;
+}
+
+#bacon {
+  display: none;
+  opacity: 1.0;
+}
+
+
+.navbar {
+    /*background: linear-gradient(to right, #D7BEA8, #DE6C83);*/
+    background: linear-gradient(to right, #DFCBB9, #DE6C83);
+    text-shadow: 2px 2px 2px #ffffff;
+    border-color: transparent;
+    border-width: 0px;
+}
+
+.navbar-brand {
+    padding: 5px 10px 5px 10px;
+    font-family: "Bangers";
+    font-size: 50px;
+
+}
+
+#pig-logo {
+    width: 40px;
+    height: 40px;
+    display: inline;
+}
