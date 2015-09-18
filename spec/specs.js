@@ -25,14 +25,14 @@ describe('Pizza', function() {
 });
 
 describe("Pizza.calculateBaseCost", function() {
-  it("costs $15 for one large pizza", function () {
-    var testPizza = new Pizza(1, "Sausage", "Large");
-    expect(testPizza.calculateBaseCost(testPizza)).to.equal(15);
+  it("costs $100 for one large pizza", function () {
+    var testPizza = new Pizza(10, "Sausage", "Small");
+    expect(testPizza.calculateBaseCost(testPizza)).to.equal(100);
   });
 
   it("costs $25 for one small pizza and one large pizza", function () {
-    var testPizza = new Pizza(2, "Sausage", "Small, Large");
-    expect(testPizza.calculateBaseCost(testPizza)).to.equal(25);
+    var testPizza = new Pizza(2, "cheese", "Small, Small");
+    expect(testPizza.calculateBaseCost(testPizza)).to.equal(20);
   });
 });
 
@@ -46,7 +46,7 @@ describe("Pizza.calculateAdditionalCost", function() {
 //you should be able to calculate the total cost using javascript with the methods already
 //created, no need to write the last spec below.
 
-//describe("Pizza.totalCost", function() {
+// describe("Pizza.totalCost", function() {
 //   it("adds together base cost and additional costs and returns total piza cost", function() {
 //     var testPizza = new Pizza(4, "Pepper, Onion, Olive, Mushroom", "Small, Large, Large, Medium");
 //     expect(testPizza.totalCost()).to.equal(60);

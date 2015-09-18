@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/styles.css" type="text/css">
+        <link rel="stylesheet" href="css/animate.css" type="text/css">
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="js/scripts.js"></script>
+        <title>Pizza Place</title>
+  </head>
+  <body>
+  <div class="container">
+    <h1>Welcome to Za's Place!</h1>
+    <h2>Tell us what you'd like to order:</h2>
+    <form id="pizza-order">
+      <div class="form-group">
+        <label for="size">What Size?</label>
+        <select class="form-control" id="pizza-size">
+          <option value="Small">Small</option>
+          <option value="Medium">Medium</option>
+          <option value="Large">Large</option>
+        </select>
+      </div>
+      <div class="form-group pizza-toppings">
+        <label for="toppings">Any additional toppings?</label>
+        <select class="form-control pizza-toppings>">
+          <option value="Pepperoni">Pepperoni</option>
+          <option value="Sausage">Sausage</option>
+          <option value="Onion">Onion</option>
+          <option value="Pepper">Pepper</option>
+          <option value="Olive">Olive</option>
+          <option value="Mushroom">Mushroom</option>
+          <option value="Pineapple">Pineapple</option>
+          <option value="Tomato">Tomato</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <button id="additional-topping" class="btn btn-success">Want more toppings? Click here</button>
+      </div>
+      <div class="form-group" id="more-toppings"> </div>
+      <div class="form-group">
+        <label for="quantity">How Many Pies?</label>
+        <input class="form-control" id="pizza-quantity" name="quantity" type="number" min="1" value="1">
+      </div>
+      <button type="submit" class="btn btn-primary">Estimate Price (minus tips :))</button>
+    </form>
+
+    <div id="total-cost">
+      <h2>Your pizza's will cost you <span id="cost"></span>. Enjoy!</h2>
+    </div>
+  </div>
+  </body>
+</html>
