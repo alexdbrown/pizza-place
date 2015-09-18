@@ -42,3 +42,14 @@ describe("Pizza.calculateAdditionalCost", function() {
     expect(testPizza.calculateAdditionalCost(testPizza)).to.equal(6);
   });
 });
+
+//you should be able to calculate the total cost using javascript with the methods already
+//created, no need to write the last spec below.
+
+//describe("Pizza.totalCost", function() {
+//   it("adds together base cost and additional costs and returns total piza cost", function() {
+//     var testPizza = new Pizza(4, "Pepper, Onion, Olive, Mushroom", "Small, Large, Large, Medium");
+//     expect(testPizza.totalCost()).to.equal(60);
+//
+//   });
+// });

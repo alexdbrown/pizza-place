@@ -7,19 +7,19 @@ function Pizza(pizzaQuantity, pizzaTopping, pizzaSize) {
 
 
 Pizza.prototype.calculateBaseCost = function() {
-  var pizzaCost = 0 ;
+  var basePizzaCost = 0 ;
   var pizzaBaseCostArray = this.pizzaSize.split(", ");
 
   for (var i = 0; i < pizzaBaseCostArray.length; i++) {
     if (pizzaBaseCostArray[i] === "Small") {
-      pizzaCost = pizzaCost + 10;
+      basePizzaCost = basePizzaCost + 10;
     } else if (pizzaBaseCostArray[i] === "Medium") {
-      pizzaCost = pizzaCost + 12;
+      basePizzaCost = basePizzaCost + 12;
     } else if (pizzaBaseCostArray[i] === "Large") {
-      pizzaCost = pizzaCost + 15;
+      basePizzaCost = basePizzaCost + 15;
     }
   }
-  return pizzaCost;
+  return basePizzaCost;
 }
 
 
@@ -30,3 +30,7 @@ Pizza.prototype.calculateAdditionalCost = function () {
   var additionalCost = additionalToppings * 2;
   return additionalCost;
 }
+
+// Pizza.prototype.totalCost = function () {
+//   return basePizzaCost + additionalCost;
+// }
