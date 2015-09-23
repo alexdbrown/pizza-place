@@ -2,7 +2,6 @@ function Pizza(pizzaQuantity, pizzaTopping, pizzaSize) {
   this.pizzaQuantity = pizzaQuantity;
   this.pizzaTopping = pizzaTopping;
   this.pizzaSize = pizzaSize;
-
 };
 
 
@@ -23,9 +22,7 @@ Pizza.prototype.calculateBaseCost = function() {
 }
 
 Pizza.prototype.calculateAdditionalCost = function () {
-
-  var pizzaToppingArray = this.pizzaTopping.split(", ");
-  var additionalToppings = pizzaToppingArray.length;
+  var additionalToppings = this.pizzaTopping.length;
   var additionalCost = additionalToppings * 2;
   return additionalCost;
 }
@@ -33,8 +30,8 @@ Pizza.prototype.calculateAdditionalCost = function () {
 $(document).ready(function() {
       $("#additional-topping").click(function(event) {
       event.preventDefault();
-          $("#more-toppings").append('<div class="form-group pizza-toppings">' +
-                                        '<select id="topping">' +
+          $("#more-toppings").append('<div class="form-group">' +
+                                        '<select id="add-topping">' +
                                           '<option value="Pepperoni">Pepperoni</option>' +
                                           '<option value="Sausage">Sausage</option>' +
                                           '<option value="Onion">Onion</option>' +
@@ -49,21 +46,32 @@ $(document).ready(function() {
 
 
   $("form#pizza-order").submit(function(event) {
-    event.preventDefault();
+      event.preventDefault();
 
-    var pizzaSize = $("select#pizza-size").val();
-    var pizzaQuantity = parseInt($("input#pizza-quantity").val());
-    var pizzaTopping = [];
+      var pizzaSize = $("select#pizza-size").val();
+      console.log(pizzaSize);
+      var pizzaQuantity = parseInt($("input#pizza-quantity").val());
+      console.log(pizzaQuantity);
+      var pizzaTopping = [];
 
     $(".pizza-toppings").each(function() {
       pizzaTopping.push($("select#pizza-topping").val());
-      pizzaTopping.push($("select#topping").val());
-    })
-    var Pizza = new Pizza(pizzaSize, pizzaQuantity, pizzaTopping);
+    });
 
-    $("#cost").text(pizza.calculateBaseCost() + pizza.calculateAdditionalCost);
+    $("#add-topping").each(function() {
+      if (($("select#add-topping").val()) != undefined) {
+        pizzaTopping.push($("select#add-topping").val());
+      }
+    });
+
+
+    var newPizza = new Pizza(pizzaQuantity, pizzaTopping, pizzaSize);
+    var totalBill = (newPizza.calculateBaseCost() + newPizza.calculateAdditionalCost());
+    console.log(newPizza.pizzaTopping);
+    console.log(totalBill);
+    $("#cost").text("$" + totalBill);
     $("#total-cost").show();
 
-
   });
+
 });
